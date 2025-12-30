@@ -26,7 +26,7 @@ import {
   Server,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import Particles from "@/components/ui/particles";
+
 import GithubOrgInfo from '@/components/ui/github-org-info';
 import Link from 'next/link';
 
@@ -72,14 +72,7 @@ const projects = [
 const PortfolioPage = () => {
   return (
     <div className="overflow-x-hidden scrollbar-hide size-full">
-      <Particles
-          className="absolute inset-0 -z-10"
-          quantity={typeof window !== 'undefined' && window.innerWidth < 768 ? 50 : 150}
-          ease={80}
-          size={0.5}
-          staticity={30}
-          color="#ffffff"
-      />
+      
       <MaxWidthWrapper>
 
         {/* ================= HEADER ================= */}
