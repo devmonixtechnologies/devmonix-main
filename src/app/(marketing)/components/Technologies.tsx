@@ -91,7 +91,7 @@ const techIconMap: Record<string, string> = {
   'GraphQL': 'https://cdn.simpleicons.org/graphql/E10098',
   'PostgreSQL': 'https://cdn.simpleicons.org/postgresql/4169E1',
   'MongoDB': 'https://cdn.simpleicons.org/mongodb/47A248',
-  'AWS': 'https://cdn.simpleicons.org/amazonaws/FF9900',
+  'AWS': 'https://img.icons8.com/?size=100&id=33039&format=png&color=000000',
   'Docker': 'https://cdn.simpleicons.org/docker/2496ED',
   'Kubernetes': 'https://cdn.simpleicons.org/kubernetes/326CE5',
   'GCP': 'https://cdn.simpleicons.org/googlecloud/4285F4',
