@@ -95,7 +95,7 @@ const techIconMap: Record<string, string> = {
   'Kubernetes': 'https://cdn.simpleicons.org/kubernetes/326CE5',
   'GCP': 'https://cdn.simpleicons.org/googlecloud/4285F4',
   'Terraform': 'https://cdn.simpleicons.org/terraform/844FBA',
-  'Azure': 'https://cdn.simpleicons.org/microsoftazure/0078D4',
+  'Azure': 'https://img.icons8.com/?size=100&id=81727&format=png&color=000000',
   'React Native': 'https://cdn.simpleicons.org/react/61DAFB',
   'Flutter': 'https://cdn.simpleicons.org/flutter/02569B',
   'Swift': 'https://cdn.simpleicons.org/swift/F05138',
@@ -103,15 +103,15 @@ const techIconMap: Record<string, string> = {
   'Expo': 'https://cdn.simpleicons.org/expo/FFFFFF',
   'TensorFlow': 'https://cdn.simpleicons.org/tensorflow/FF6F00',
   'PyTorch': 'https://cdn.simpleicons.org/pytorch/EE4C2C',
-  'OpenAI APIs': 'https://cdn.simpleicons.org/openai/FFFFFF',
+  'OpenAI APIs': 'https://cdn.simpleicons.org/openaigym/FFFFFF',
   'Langchain': 'https://cdn.simpleicons.org/langchain/00A67E',
   'Hugging Face': 'https://cdn.simpleicons.org/huggingface/FFD21E',
   'Solidity': 'https://cdn.simpleicons.org/solidity/FFFFFF',
   'Ethereum': 'https://cdn.simpleicons.org/ethereum/3C3C3D',
   'Web3.js': 'https://cdn.simpleicons.org/web3dotjs/F16822',
   'IPFS': 'https://cdn.simpleicons.org/ipfs/65C2CB',
-  'Hardhat': 'https://cdn.simpleicons.org/hardhat/FFF100',
-  'Moralis': 'https://cdn.simpleicons.org/moralis/2559BB',
+  'Hardhat': 'https://img.icons8.com/?size=100&id=113899&format=png&color=000000',
+  'Moralis': 'https://images.seeklogo.com/logo-png/44/1/moralis-logo-png_seeklogo-448630.png',
 };
 
 // Helper function to get icon URL
