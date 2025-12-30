@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     // Email to company
     const companyMailOptions = {
       from: process.env.EMAIL_USER,
-      to: ['team@devmonix.in', 'salesdevmonixtechnologies@gmail.com'],
+      to: ['sales@devmonix.io', 'salesdevmonixtechnologies@gmail.com'],
       replyTo: email, // reply directly to the user
       subject: `New Contact Form Submission: ${safeSubject}`,
       html: `
@@ -66,12 +66,12 @@ export async function POST(request: NextRequest) {
     // Auto-reply to user with enhanced theme and configured display email
     const senderEmail = (process.env.PREFERRED_SENDER_EMAIL && process.env.PREFERRED_SENDER_EMAIL.trim().length > 0)
       ? process.env.PREFERRED_SENDER_EMAIL.trim()
-      : 'team@devmonix.in';
+      : 'sales@devmonix.io';
     const senderLabel = `DEVMONIX Technologies <${senderEmail}>`;
 
     const userMailOptions = {
       from: senderLabel,
-      replyTo: process.env.EMAIL_USER || 'team@devmonix.in',
+      replyTo: process.env.EMAIL_USER || 'sales@devmonix.io',
       to: email,
       subject: 'We got your message! — DEVMONIX TECHNOLOGIES',
       html: `
@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
           <tr>
             <td style="padding:20px 28px; background:#0b1220; color:#94a3b8; font-size:13px;">
               <div style="opacity:0.9;">DEVMONIX TECHNOLOGIES</div>
-              <div>Email: <a href="mailto:team@devmonix.in" style="color:#c7d2fe; text-decoration:none;">team@devmonix.in</a></div>
+              <div>Email: <a href="mailto:sales@devmonix.io" style="color:#c7d2fe; text-decoration:none;">sales@devmonix.io</a></div>
               <div>Phone: +919061402804</div>
             </td>
           </tr>
