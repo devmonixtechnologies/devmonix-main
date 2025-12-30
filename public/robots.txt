@@ -1,0 +1,15 @@
+# robots.txt for DevMonix Technologies
+# https://devmonix.io/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas if any
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location
+Sitemap: https://devmonix.io/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
