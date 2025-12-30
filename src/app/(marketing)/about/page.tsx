@@ -148,8 +148,8 @@ const AboutUsPage = () => {
               <dl className="grid grid-cols-2 gap-6 text-center">
                 {[
                   {
-                    label: 'Specialists across engineering, design & data',
-                    value: '6+',
+                    label: 'Uptime',
+                    value: '99.9%',
                   },
                   {
                     label: 'Client retention across enterprise programs',
