@@ -13,7 +13,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import Link from 'next/link';
-import Particles from "@/components/ui/particles";
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const services = [
@@ -62,14 +62,7 @@ const services = [
 const ServicesPage = () => {
   return (
     <div className="overflow-x-hidden scrollbar-hide size-full">
-      <Particles
-          className="absolute inset-0 -z-10"
-          quantity={typeof window !== 'undefined' && window.innerWidth < 768 ? 50 : 150}
-          ease={80}
-          size={0.5}
-          staticity={30}
-          color="#ffffff"
-      />
+      
       <MaxWidthWrapper>
 
         {/* ================= HEADER ================= */}
