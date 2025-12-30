@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import Particles from '@/components/ui/particles';
+
 import { MaxWidthWrapper, AnimationContainer } from '@/components';
 import { Button } from '@/components/ui/button';
 import { Bot, Send, ArrowLeft, Loader2, Code, Mail, Brain } from 'lucide-react';
@@ -441,14 +441,7 @@ const AIChatPage = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden text-white">
-      <Particles
-        className="absolute inset-0 -z-10"
-        quantity={typeof window !== 'undefined' && window.innerWidth < 768 ? 50 : 180}
-        ease={80}
-        size={0.5}
-        staticity={30}
-        color="#ffffff"
-      />
+      
 
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#161616_1px,transparent_1px),linear-gradient(to_bottom,#161616_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
 
