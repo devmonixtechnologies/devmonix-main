@@ -79,12 +79,12 @@ const techCategories = [
 
 const techIconMap: Record<string, string> = {
   React: 'https://cdn.simpleicons.org/react/61DAFB',
-  'Vue.js': 'https://cdn.simpleicons.org/vuedotjs/4FC08D',
-  'Next.js': 'https://cdn.simpleicons.org/nextdotjs/FFFFFF',
+  Vuejs: 'https://cdn.simpleicons.org/vuedotjs/4FC08D',
+  Nextjs: 'https://cdn.simpleicons.org/nextdotjs/FFFFFF',
   TypeScript: 'https://cdn.simpleicons.org/typescript/3178C6',
   Bootstrap: 'https://cdn.simpleicons.org/bootstrap/7952B3',
   Svelte: 'https://cdn.simpleicons.org/svelte/FF3E00',
-  'Node.js': 'https://cdn.simpleicons.org/nodedotjs/339933',
+  Nodejs: 'https://cdn.simpleicons.org/nodedotjs/339933',
   Python: 'https://cdn.simpleicons.org/python/3776AB',
   Go: 'https://cdn.simpleicons.org/go/00ADD8',
   GraphQL: 'https://cdn.simpleicons.org/graphql/E10098',
@@ -99,12 +99,12 @@ const techIconMap: Record<string, string> = {
   Expo: 'https://cdn.simpleicons.org/expo/FFFFFF',
   TensorFlow: 'https://cdn.simpleicons.org/tensorflow/FF6F00',
   PyTorch: 'https://cdn.simpleicons.org/pytorch/EE4C2C',
-  'OpenAI APIs': 'https://cdn.simpleicons.org/openai/FFFFFF',
+  OpenAIAPIs: 'https://cdn.simpleicons.org/openai/FFFFFF',
   Langchain: 'https://cdn.simpleicons.org/langchain/00A67E',
-  'Hugging Face': 'https://cdn.simpleicons.org/huggingface/FFD21E',
+  HuggingFace: 'https://cdn.simpleicons.org/huggingface/FFD21E',
   Solidity: 'https://cdn.simpleicons.org/solidity/FFFFFF',
   Ethereum: 'https://cdn.simpleicons.org/ethereum/3C3C3D',
-  'Web3.js': 'https://cdn.simpleicons.org/web3dotjs/F16822',
+  Web3js: 'https://cdn.simpleicons.org/web3dotjs/F16822',
   IPFS: 'https://cdn.simpleicons.org/ipfs/65C2CB',
 };
 
