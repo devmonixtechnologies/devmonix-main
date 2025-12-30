@@ -20,5 +20,5 @@ DEVMONIX is a cutting-edge technology solution designed to streamline and enhanc
 * Git
 * Vercel
 
-Built with ❤️ by [mohdrash](https://iamicy.vercel.app/)
+Built with ❤️ by DevMonix Team
 # Devmonix-site
