@@ -90,7 +90,7 @@ const ContactPage = () => {
                 </p>
                 <ul className="mt-4 space-y-4 text-muted-foreground md:text-xl">
                   <li>
-                    <span className="font-semibold text-foreground">Email:</span> team@devmonix.in
+                    <span className="font-semibold text-foreground">Email:</span> sales@devmonix.in
                   </li>
                   <li>
                     <span className="font-semibold text-foreground">Phone:</span> +91 906 140 2804 | +62 217 697 9789
