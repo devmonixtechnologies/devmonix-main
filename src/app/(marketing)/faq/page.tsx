@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
-import Particles from "@/components/ui/particles";
+
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -11,14 +11,7 @@ export const metadata: Metadata = {
 const FAQPage = () => {
   return (
     <div className="relative z-10">
-      <Particles
-          className="absolute inset-0 -z-10"
-          quantity={typeof window !== 'undefined' && window.innerWidth < 768 ? 50 : 200}
-          ease={80}
-          size={0.5}
-          staticity={30}
-          color="#ffffff"
-      />
+      
       <PageHeader>
         <PageHeaderHeading>Frequently Asked Questions</PageHeaderHeading>
         <PageHeaderDescription>
