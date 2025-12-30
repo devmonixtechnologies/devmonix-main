@@ -13,7 +13,6 @@ import { REVIEWS } from "@/utils/constants/misc";
 import { ArrowRightIcon, ChevronRight, StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Particles from "@/components/ui/particles";
 import Technologies from './components/Technologies';
 import Monitoring from './components/Monitoring';
 // import Process from './components/process';
@@ -24,14 +23,7 @@ import Monitoring from './components/Monitoring';
 const HomePage = () => {
     return (
         <div className="overflow-x-hidden scrollbar-hide size-full">
-            <Particles
-                className="absolute inset-0 -z-10"
-                quantity={typeof window !== 'undefined' && window.innerWidth < 768 ? 50 : 200}
-                ease={80}
-                size={0.5}
-                staticity={30}
-                color="#ffffff"
-            />
+            
             {/* Hero Section */}
             <MaxWidthWrapper className='mt-32 sm:mt-36 md:mt-44 lg:mt-56 xl:mt-60'>
                 <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
