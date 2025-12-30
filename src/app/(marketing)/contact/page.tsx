@@ -32,7 +32,7 @@ const ContactPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Trim all fields and validate
+    // Remove all whitespace characters (spaces, tabs, newlines, etc.) and validate
     const trimmedData = {
       name: formData.name.trim(),
       email: formData.email.trim(),
@@ -46,9 +46,52 @@ const ContactPage = () => {
       return;
     }
     
-    // Additional validation for minimum length
-    if (trimmedData.name.length < 2) {
-      toast.error('Name must be at least 2 characters long.');
+    // Check if fields contain only whitespace/invisible characters
+    const hasOnlyWhitespace = (str: string) => {
+      // Remove all whitespace and check if anything remains
+      return str.replace(/\s+/g, '').length === 0;
+    };
+    
+    // Check if fields contain only special characters (no letters or numbers)
+    const hasOnlySpecialChars = (str: string) => {
+      // Remove all non-alphanumeric characters and check if anything remains
+      return str.replace(/[^a-zA-Z0-9]/g, '').length === 0;
+    };
+    
+    if (hasOnlyWhitespace(trimmedData.name)) {
+      toast.error('Name cannot contain only spaces.');
+      return;
+    }
+    
+    if (hasOnlySpecialChars(trimmedData.name)) {
+      toast.error('Name must contain letters or numbers, not just special characters.');
+      return;
+    }
+    
+    if (hasOnlyWhitespace(trimmedData.subject)) {
+      toast.error('Subject cannot contain only spaces.');
+      return;
+    }
+    
+    if (hasOnlySpecialChars(trimmedData.subject)) {
+      toast.error('Subject must contain letters or numbers, not just special characters.');
+      return;
+    }
+    
+    if (hasOnlyWhitespace(trimmedData.message)) {
+      toast.error('Message cannot contain only spaces.');
+      return;
+    }
+    
+    if (hasOnlySpecialChars(trimmedData.message)) {
+      toast.error('Message must contain letters or numbers, not just special characters.');
+      return;
+    }
+    
+    // Additional validation for minimum length (after removing all spaces)
+    const nameWithoutSpaces = trimmedData.name.replace(/\s+/g, '');
+    if (nameWithoutSpaces.length < 2) {
+      toast.error('Name must be at least 2 characters long (excluding spaces).');
       return;
     }
     
@@ -58,8 +101,9 @@ const ContactPage = () => {
       return;
     }
     
-    if (trimmedData.subject.length < 3) {
-      toast.error('Subject must be at least 3 characters long.');
+    const subjectWithoutSpaces = trimmedData.subject.replace(/\s+/g, '');
+    if (subjectWithoutSpaces.length < 3) {
+      toast.error('Subject must be at least 3 characters long (excluding spaces).');
       return;
     }
     
@@ -69,8 +113,9 @@ const ContactPage = () => {
       return;
     }
     
-    if (trimmedData.message.length < 10) {
-      toast.error('Message must be at least 10 characters long.');
+    const messageWithoutSpaces = trimmedData.message.replace(/\s+/g, '');
+    if (messageWithoutSpaces.length < 10) {
+      toast.error('Message must be at least 10 characters long (excluding spaces).');
       return;
     }
     
