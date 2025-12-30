@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import Particles from "@/components/ui/particles";
+
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -58,14 +58,7 @@ const ContactPage = () => {
 
   return (
     <div className="overflow-x-hidden scrollbar-hide size-full relative">
-      <Particles
-          className="absolute inset-0 -z-10"
-          quantity={typeof window !== 'undefined' && window.innerWidth < 768 ? 50 : 200}
-          ease={80}
-          size={0.5}
-          staticity={30}
-          color="#ffffff"
-      />
+      
       <MaxWidthWrapper>
         <PageHeader>
           <Link
