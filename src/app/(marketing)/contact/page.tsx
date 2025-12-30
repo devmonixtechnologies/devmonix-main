@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-
+import Particles from "@/components/ui/particles";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -31,6 +31,49 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Trim all fields and validate
+    const trimmedData = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      subject: formData.subject.trim(),
+      message: formData.message.trim()
+    };
+    
+    // Check if any field is empty after trimming
+    if (!trimmedData.name || !trimmedData.email || !trimmedData.subject || !trimmedData.message) {
+      toast.error('Please fill in all fields with valid content.');
+      return;
+    }
+    
+    // Additional validation for minimum length
+    if (trimmedData.name.length < 2) {
+      toast.error('Name must be at least 2 characters long.');
+      return;
+    }
+    
+    // Validate name contains alphabets
+    if (!/[a-zA-Z]/.test(trimmedData.name)) {
+      toast.error('Name must contain alphabetic characters.');
+      return;
+    }
+    
+    if (trimmedData.subject.length < 3) {
+      toast.error('Subject must be at least 3 characters long.');
+      return;
+    }
+    
+    // Validate subject contains alphabets
+    if (!/[a-zA-Z]/.test(trimmedData.subject)) {
+      toast.error('Subject must contain alphabetic characters.');
+      return;
+    }
+    
+    if (trimmedData.message.length < 10) {
+      toast.error('Message must be at least 10 characters long.');
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {
@@ -39,7 +82,7 @@ const ContactPage = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(trimmedData),
       });
 
       if (response.ok) {
@@ -58,7 +101,14 @@ const ContactPage = () => {
 
   return (
     <div className="overflow-x-hidden scrollbar-hide size-full relative">
-      
+      <Particles
+          className="absolute inset-0 -z-10"
+          quantity={typeof window !== 'undefined' && window.innerWidth < 768 ? 50 : 200}
+          ease={80}
+          size={0.5}
+          staticity={30}
+          color="#ffffff"
+      />
       <MaxWidthWrapper>
         <PageHeader>
           <Link
@@ -90,7 +140,7 @@ const ContactPage = () => {
                 </p>
                 <ul className="mt-4 space-y-4 text-muted-foreground md:text-xl">
                   <li>
-                    <span className="font-semibold text-foreground">Email:</span> sales@devmonix.in
+                    <span className="font-semibold text-foreground">Email:</span> team@devmonix.in
                   </li>
                   <li>
                     <span className="font-semibold text-foreground">Phone:</span> +91 906 140 2804 | +62 217 697 9789
@@ -118,6 +168,7 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
+                      minLength={2}
                     />
                   </div>
                   <div className="grid gap-2">
@@ -139,6 +190,7 @@ const ContactPage = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
+                      minLength={3}
                     />
                   </div>
                   <div className="grid gap-2">
@@ -150,6 +202,7 @@ const ContactPage = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
+                      minLength={10}
                     />
                   </div>
                   <Button type="submit" disabled={isSubmitting}>
