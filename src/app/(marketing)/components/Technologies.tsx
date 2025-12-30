@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Brain, ShieldCheck, Rocket } from 'lucide-react';
+import Image from 'next/image';
 
 
 const techCategories = [
@@ -110,6 +111,11 @@ const techIconMap: Record<string, string> = {
 
 export default function Technologies() {
   const [activeCategory, setActiveCategory] = useState(0);
+  const [loadedIcons, setLoadedIcons] = useState<Record<string, boolean>>({});
+
+  const handleIconLoad = (techName: string) => {
+    setLoadedIcons(prev => ({ ...prev, [techName]: true }));
+  };
 
   return (
     <section className="py-16 sm:py-20 md:py-24 pt-8 sm:pt-10 px-4 sm:px-6 bg-neutral-950 text-neutral-100">
@@ -182,21 +188,38 @@ export default function Technologies() {
 
             {/* Right */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              {techCategories[activeCategory].technologies.map((tech, index) => (
-                <div
-                  key={index}
-                  className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-neutral-900 border border-neutral-800 hover:shadow-[0_0_25px_rgba(255,255,255,0.08)] transition-all hover:-translate-y-1"
-                >
-                  <img
-                    src={techIconMap[tech.name]}
-                    alt={tech.name}
-                    className="w-8 h-8 sm:w-10 sm:h-10 mb-2 sm:mb-3"
-                  />
-                  <div className="font-semibold text-neutral-200 text-xs sm:text-sm">
-                    {tech.name}
+              {techCategories[activeCategory].technologies.map((tech, index) => {
+                const iconKey = `${activeCategory}-${tech.name}`;
+                const isLoaded = loadedIcons[iconKey];
+                
+                return (
+                  <div
+                    key={index}
+                    className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-neutral-900 border border-neutral-800 hover:shadow-[0_0_25px_rgba(255,255,255,0.08)] transition-all hover:-translate-y-1"
+                  >
+                    <div className="relative w-8 h-8 sm:w-10 sm:h-10 mb-2 sm:mb-3">
+                      {/* Skeleton loader */}
+                      {!isLoaded && (
+                        <div className="absolute inset-0 bg-neutral-800 rounded-lg animate-pulse" />
+                      )}
+                      
+                      {/* Icon */}
+                      <img
+                        src={techIconMap[tech.name.replace(/\./g, '').replace(/\s/g, '')] || techIconMap[tech.name]}
+                        alt={tech.name}
+                        className={`w-full h-full transition-opacity duration-300 ${
+                          isLoaded ? 'opacity-100' : 'opacity-0'
+                        }`}
+                        onLoad={() => handleIconLoad(iconKey)}
+                        onError={() => handleIconLoad(iconKey)}
+                      />
+                    </div>
+                    <div className="font-semibold text-neutral-200 text-xs sm:text-sm">
+                      {tech.name}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
           </div>
