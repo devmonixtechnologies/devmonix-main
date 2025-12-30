@@ -79,34 +79,45 @@ const techCategories = [
 ];
 
 const techIconMap: Record<string, string> = {
-  React: 'https://cdn.simpleicons.org/react/61DAFB',
-  Vuejs: 'https://cdn.simpleicons.org/vuedotjs/4FC08D',
-  Nextjs: 'https://cdn.simpleicons.org/nextdotjs/FFFFFF',
-  TypeScript: 'https://cdn.simpleicons.org/typescript/3178C6',
-  Bootstrap: 'https://cdn.simpleicons.org/bootstrap/7952B3',
-  Svelte: 'https://cdn.simpleicons.org/svelte/FF3E00',
-  Nodejs: 'https://cdn.simpleicons.org/nodedotjs/339933',
-  Python: 'https://cdn.simpleicons.org/python/3776AB',
-  Go: 'https://cdn.simpleicons.org/go/00ADD8',
-  GraphQL: 'https://cdn.simpleicons.org/graphql/E10098',
-  PostgreSQL: 'https://cdn.simpleicons.org/postgresql/4169E1',
-  MongoDB: 'https://cdn.simpleicons.org/mongodb/47A248',
-  Docker: 'https://cdn.simpleicons.org/docker/2496ED',
-  Kubernetes: 'https://cdn.simpleicons.org/kubernetes/326CE5',
-  Terraform: 'https://cdn.simpleicons.org/terraform/844FBA',
-  Flutter: 'https://cdn.simpleicons.org/flutter/02569B',
-  Swift: 'https://cdn.simpleicons.org/swift/F05138',
-  Kotlin: 'https://cdn.simpleicons.org/kotlin/7F52FF',
-  Expo: 'https://cdn.simpleicons.org/expo/FFFFFF',
-  TensorFlow: 'https://cdn.simpleicons.org/tensorflow/FF6F00',
-  PyTorch: 'https://cdn.simpleicons.org/pytorch/EE4C2C',
-  OpenAIAPIs: 'https://cdn.simpleicons.org/openai/FFFFFF',
-  Langchain: 'https://cdn.simpleicons.org/langchain/00A67E',
-  HuggingFace: 'https://cdn.simpleicons.org/huggingface/FFD21E',
-  Solidity: 'https://cdn.simpleicons.org/solidity/FFFFFF',
-  Ethereum: 'https://cdn.simpleicons.org/ethereum/3C3C3D',
-  Web3js: 'https://cdn.simpleicons.org/web3dotjs/F16822',
-  IPFS: 'https://cdn.simpleicons.org/ipfs/65C2CB',
+  'React': 'https://cdn.simpleicons.org/react/61DAFB',
+  'Vue.js': 'https://cdn.simpleicons.org/vuedotjs/4FC08D',
+  'Next.js': 'https://cdn.simpleicons.org/nextdotjs/FFFFFF',
+  'TypeScript': 'https://cdn.simpleicons.org/typescript/3178C6',
+  'Bootstrap': 'https://cdn.simpleicons.org/bootstrap/7952B3',
+  'Svelte': 'https://cdn.simpleicons.org/svelte/FF3E00',
+  'Node.js': 'https://cdn.simpleicons.org/nodedotjs/339933',
+  'Python': 'https://cdn.simpleicons.org/python/3776AB',
+  'Go': 'https://cdn.simpleicons.org/go/00ADD8',
+  'GraphQL': 'https://cdn.simpleicons.org/graphql/E10098',
+  'PostgreSQL': 'https://cdn.simpleicons.org/postgresql/4169E1',
+  'MongoDB': 'https://cdn.simpleicons.org/mongodb/47A248',
+  'AWS': 'https://cdn.simpleicons.org/amazonaws/FF9900',
+  'Docker': 'https://cdn.simpleicons.org/docker/2496ED',
+  'Kubernetes': 'https://cdn.simpleicons.org/kubernetes/326CE5',
+  'GCP': 'https://cdn.simpleicons.org/googlecloud/4285F4',
+  'Terraform': 'https://cdn.simpleicons.org/terraform/844FBA',
+  'Azure': 'https://cdn.simpleicons.org/microsoftazure/0078D4',
+  'React Native': 'https://cdn.simpleicons.org/react/61DAFB',
+  'Flutter': 'https://cdn.simpleicons.org/flutter/02569B',
+  'Swift': 'https://cdn.simpleicons.org/swift/F05138',
+  'Kotlin': 'https://cdn.simpleicons.org/kotlin/7F52FF',
+  'Expo': 'https://cdn.simpleicons.org/expo/FFFFFF',
+  'TensorFlow': 'https://cdn.simpleicons.org/tensorflow/FF6F00',
+  'PyTorch': 'https://cdn.simpleicons.org/pytorch/EE4C2C',
+  'OpenAI APIs': 'https://cdn.simpleicons.org/openai/FFFFFF',
+  'Langchain': 'https://cdn.simpleicons.org/langchain/00A67E',
+  'Hugging Face': 'https://cdn.simpleicons.org/huggingface/FFD21E',
+  'Solidity': 'https://cdn.simpleicons.org/solidity/FFFFFF',
+  'Ethereum': 'https://cdn.simpleicons.org/ethereum/3C3C3D',
+  'Web3.js': 'https://cdn.simpleicons.org/web3dotjs/F16822',
+  'IPFS': 'https://cdn.simpleicons.org/ipfs/65C2CB',
+  'Hardhat': 'https://cdn.simpleicons.org/hardhat/FFF100',
+  'Moralis': 'https://cdn.simpleicons.org/moralis/2559BB',
+};
+
+// Helper function to get icon URL
+const getIconUrl = (techName: string): string => {
+  return techIconMap[techName] || 'https://cdn.simpleicons.org/default/FFFFFF';
 };
 
 export default function Technologies() {
@@ -205,7 +216,7 @@ export default function Technologies() {
                       
                       {/* Icon */}
                       <img
-                        src={techIconMap[tech.name.replace(/\./g, '').replace(/\s/g, '')] || techIconMap[tech.name]}
+                        src={getIconUrl(tech.name)}
                         alt={tech.name}
                         className={`w-full h-full transition-opacity duration-300 ${
                           isLoaded ? 'opacity-100' : 'opacity-0'
