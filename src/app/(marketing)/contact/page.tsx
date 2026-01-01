@@ -169,7 +169,7 @@ const ContactPage = () => {
             Have a project in mind or a question for our team? We love to hear from you. Fill out the form below or reach out to us directly.
           </PageHeaderDescription>
           <Button asChild>
-            <Link href="mailto:team@devmonix.in">
+            <Link href="mailto:sales@devmonix.io">
               Email Us
             </Link>
           </Button>
@@ -185,7 +185,7 @@ const ContactPage = () => {
                 </p>
                 <ul className="mt-4 space-y-4 text-muted-foreground md:text-xl">
                   <li>
-                    <span className="font-semibold text-foreground">Email:</span> team@devmonix.in
+                    <span className="font-semibold text-foreground">Email:</span> sales@devmonix.io
                   </li>
                   <li>
                     <span className="font-semibold text-foreground">Phone:</span> +91 906 140 2804 | +62 217 697 9789
