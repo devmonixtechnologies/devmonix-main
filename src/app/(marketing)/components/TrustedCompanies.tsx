@@ -30,7 +30,7 @@ export default function TrustedCompanies() {
       {/* Heading */}
       <div className="text-center mb-16">
         <h2 className="text-5xl md:text-6xl font-bold mb-6">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">
             Trusted Leading
           </span>{" "}
           Companies
