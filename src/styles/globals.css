@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* ================= Infinite Scroll Animations ================= */
+
+@keyframes scroll-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* FAST + SMOOTH (no stuck) */
+.animate-scroll-left-fast {
+  animation: scroll-left 14s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-right-fast {
+  animation: scroll-right 14s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover */
+.pause-on-hover:hover {
+  animation-play-state: paused;
+}
+
 @layer base {
   :root {
     --foreground: 0 0% 98%;

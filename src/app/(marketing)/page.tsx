@@ -15,6 +15,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Technologies from './components/Technologies';
 import Monitoring from './components/Monitoring';
+import TrustedCompanies from "./components/TrustedCompanies";
 // import Process from './components/process';
 
 
@@ -132,6 +133,11 @@ const HomePage = () => {
                 </AnimationContainer>
             </MaxWidthWrapper>
             
+
+
+  {/* =========================  Trusted By Leading Companies =========================  */}
+
+<TrustedCompanies />
 
 
             {/* Reviews Section */}
